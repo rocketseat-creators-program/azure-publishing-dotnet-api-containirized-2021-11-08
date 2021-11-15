@@ -53,7 +53,7 @@ jobs:
         docker build . --file ./${{ env.APP_FOLDER }}/Dockerfile --tag ${{ secrets.IMAGE_NAME }}:$GITHUB_RUN_NUMBER
         docker tag ${{ secrets.IMAGE_NAME }}:$GITHUB_RUN_NUMBER ${{ secrets.IMAGE_NAME }}:latest
         docker push ${{ secrets.IMAGE_NAME }}:$GITHUB_RUN_NUMBER
-        docker push ${{ secrets.IMAGE_NAME }}:latest
+        docker push ${{ secrets.IMAGE_NAME }}
   
   deploy:
     name: Deploying Az Web App
